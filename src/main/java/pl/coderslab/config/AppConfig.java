@@ -67,14 +67,9 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         localeResolver.setDefaultLocale(new Locale("pl","PL"));
         return localeResolver;
     }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry
-                .addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/");
+        registry.addResourceHandler("/css/**", "/js/**")
+                .addResourceLocations("/css/", "/js/");
     }
-
-
-
 }

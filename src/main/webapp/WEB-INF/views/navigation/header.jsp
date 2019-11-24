@@ -6,7 +6,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand">Projekty montażowe na bogato</a>
+                <a class="navbar-brand">MP</a>
             </div>
              <ul class="nav navbar-nav">
                 <li class="nav-item">

@@ -23,6 +23,8 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    DataSource dataSource;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -38,10 +40,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         return dataSource;
     }
-
-    @Autowired
-    DataSource dataSource;
-
 /*
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -61,7 +59,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/team**").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/user/**", "/project/delete/**").hasAuthority("ADMIN")
                 .antMatchers("/", "/login**", "/logout").permitAll()
-                .antMatchers("src/main/resources/**").permitAll()
+                .antMatchers("/css/**", "/js/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

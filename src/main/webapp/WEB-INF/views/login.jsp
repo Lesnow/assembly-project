@@ -7,6 +7,7 @@
     <title>Login</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -15,7 +16,8 @@
 <jsp:include page="/WEB-INF/views/navigation/header.jsp"/>
 
 
-    <div class="container" style="margin-top:100px">
+    <div class="container top-margin">
+        <h2>Wprowadź dane logowania</h2>
         <div class="form-group">
             <sec:authorize access="!isAuthenticated()">
             <form class="form-horizontal" method="post" action="/login">

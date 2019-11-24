@@ -5,6 +5,7 @@
     <title>ekipy montażowe</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -12,7 +13,8 @@
 <body>
 <jsp:include page="/WEB-INF/views/navigation/header.jsp"/>
 
-<div class="container" style="margin-top:40px">
+
+<div class="container top-margin">
     <div class="row">
         <div class="col-sm-8">
             <h2>Lista ekip montażowych</h2>
@@ -21,8 +23,6 @@
             <input type="button" class="btn navbar-btn btn-primary btn-block" onclick="location.href='/team/add';" value = "dodaj nowego podwykonawce" />
         </div>
     </div>
-
-
 
     <table class="table table-hover">
         <thead>

@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/navigation/header.jsp"/>
 
-<div class="container" style="margin-top:100px">
+<div class="container top-margin">
     <div class="form-group">
         <h2>Dane urzytkownika</h2>
 

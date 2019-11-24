@@ -15,7 +15,7 @@
 
 <jsp:include page="/WEB-INF/views/navigation/header.jsp"/>
 
-<div class="container top-margin" >
+<div class="container top-margin">
 
     <input type="button" class="btn btn-primary btn-block" onclick="location.href='/project/add';" value = "dodaj nowy projekt" />
 
@@ -24,21 +24,20 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Projekt</th>
+            <th><a href="/project/all">Projekt</a></th>
             <th>Numer fabryczny</th>
             <th>Priorytet</th>
             <th>Status</th>
             <th>Adres projektu</th>
-            <th>Prowadzący</th>
-            <th>Montaż</th>
-            <th>Dostawa</th>
-            <th>Data zakończenia</th>
+            <th><a href="/project/allByUser">Prowadzący</a></th>
+            <th><a href="/project/allByTeam">Montaż</a></th>
+            <th><a href="/project/allByTransportDate">Dostawa</a></th>
+            <th><a href="/project/allByEndDate">Data zakończenia</a></th>
             <th>edycja</th>
             <th>usuń</th>
         </tr>
         </thead>
         <tbody>
-
             <c:forEach items="${projects}" var="project" varStatus="loop">
                 <c:choose>
                     <c:when test="${fourWeeksFromNow > project.endDate}">
@@ -48,7 +47,6 @@
                         <tr>
                     </c:otherwise>
                 </c:choose>
-
                             <td>
                                 ${loop.count}
                             </td>
@@ -130,8 +128,8 @@
     });
 </script>
 
-<script> src="js/app.js" </script>
 
+<script> src="js/app.js" </script>
 </body>
 </body>
 </html>

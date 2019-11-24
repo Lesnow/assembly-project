@@ -48,12 +48,42 @@ public class ProjectController {
         return "project/showAllProjects";
     }
 
+    @RequestMapping ("/allByEndDate")
+    String shawAllProjectsByEndDate(Model model) {
+        Set<Project> projects = projectRepository.findAllByOrderByEndDate();
+        model.addAttribute("projects", projects);
+        return "project/showAllProjects";
+    }
+
+    @RequestMapping ("/allByTransportDate")
+    String shawAllProjectsByTransportDate(Model model) {
+        Set<Project> projects = projectRepository.findAllByOrderByTransportDate();
+        model.addAttribute("projects", projects);
+        return "project/showAllProjects";
+    }
+
+    @RequestMapping ("/allByUser")
+    String shawAllProjectsByUser(Model model) {
+        Set<Project> projects = projectRepository.findAllByOrderByUser();
+        model.addAttribute("projects", projects);
+        return "project/showAllProjects";
+    }
+
+    @RequestMapping ("/allByTeam")
+    String shawAllProjectsByAssemblyTeam(Model model) {
+        Set<Project> projects = projectRepository.findAllByOrderByAssemblyTeam();
+        model.addAttribute("projects", projects);
+        return "project/showAllProjects";
+    }
+
+
     @RequestMapping ("/all")
     String shawAllProjects(Model model) {
         Set<Project> projects = projectRepository.findAllByOrderByProjectNumber();
         model.addAttribute("projects", projects);
         return "project/showAllProjects";
     }
+
 
     @RequestMapping (value = "/add", method = RequestMethod.GET)
     String addProject(Model model) {
