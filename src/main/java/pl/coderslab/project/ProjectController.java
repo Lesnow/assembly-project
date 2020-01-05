@@ -143,7 +143,6 @@ public class ProjectController {
     @RequestMapping (value = "/detachCurrentUser/{ProjectId}", method = RequestMethod.GET)
     public String detachCurrentUser(@AuthenticationPrincipal CurrentUser customUser, @PathVariable Long ProjectId, Model model) {
         Project project;
-        User entityUser = customUser.getUser();
         if (projectRepository.findById(ProjectId).isPresent()) {
             project = projectRepository.findById(ProjectId).get();
             project.setUser(null);

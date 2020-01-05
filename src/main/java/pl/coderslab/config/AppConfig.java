@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -26,7 +26,7 @@ import java.util.Locale;
 @ComponentScan(basePackages = "pl.coderslab")
 @EnableJpaRepositories (basePackages = "pl.coderslab")
 @EnableTransactionManagement
-public class AppConfig extends WebMvcConfigurerAdapter {
+public class AppConfig implements WebMvcConfigurer {
 
     @Bean
     public ViewResolver viewResolver() {

@@ -1,12 +1,9 @@
 package pl.coderslab.user;
 
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.project.Project;
-import pl.coderslab.project.ProjectRepository;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -17,12 +14,10 @@ import java.util.List;
 @RequestMapping ("/user")
 public class UserController {
     private static UserRepository userRepository;
-    private static ProjectRepository projectRepository;
     private static UserService userService;
 
-    public UserController(UserRepository userRepository, ProjectRepository projectRepository, UserService userService) {
+    public UserController(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
-        this.projectRepository = projectRepository;
         this.userService = userService;
     }
 
@@ -43,7 +38,6 @@ public class UserController {
 
     @RequestMapping (value = "/update/{id}", method = RequestMethod.GET)
     public String updateProject(@PathVariable Long id, Model model) {
-        User user;
         if (userRepository.findById(id).isPresent()) {
             model.addAttribute(userRepository.findById(id).get());
             return "user/changeUserDetailsForm";

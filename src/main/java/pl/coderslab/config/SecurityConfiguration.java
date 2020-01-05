@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
-
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -40,12 +40,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         return dataSource;
     }
-/*
-    @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.jdbcAuthentication().dataSource(dataSource);//.withUser("admin").password(passwordEncoder().encode("admin")).roles("admin");
-    }
-*/
+
+//    @Override
+//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth.jdbcAuthentication().dataSource(dataSource).withUser("admin").password(passwordEncoder().encode("admin")).roles("admin");
+//    }
+
 
     @Bean
     public SpringDataUserDetailsService customUserDetailsService() {
@@ -61,6 +61,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/login**", "/logout").permitAll()
                 .antMatchers("/css/**", "/js/**").permitAll()
                 .anyRequest().authenticated()
+       // .anyRequest().permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")

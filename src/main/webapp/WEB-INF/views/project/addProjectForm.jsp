@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" for="statusId">Ekipa montażowa</label>
+                <label class="control-label col-sm-2" for="statusId">Status</label>
                 <div class="col-sm-10">
                     <form:select path="status.id" id="statusId" items="${statusesList}" itemValue="id" itemLabel="statusName" class="form-control"/>
                     <form:errors path="status" />

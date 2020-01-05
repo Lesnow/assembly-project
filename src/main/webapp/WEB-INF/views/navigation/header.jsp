@@ -40,7 +40,7 @@
 
                             <form class="form-inline" method="post" action="<c:url value="/logout"/>">
                                 <sec:csrfInput />
-                                <li><input class="btn btn-outline btn-block"type="submit" value = "wyloguj" /></li>
+                            <li><input class="btn btn-outline btn-block"type="submit" value = "wyloguj" /></li>
                             </form>
                         </ul>
                 </li>
