@@ -24,12 +24,10 @@ import java.util.Set;
 public class ProjectController {
     private static ProjectRepository projectRepository;
     private static AssemblyTeamRepository assemblyTeamRepository;
-    private static StatusRepository statusRepository;
 
-    public ProjectController(ProjectRepository projectRepository, AssemblyTeamRepository assemblyTeamRepository, StatusRepository statusRepository) {
+    public ProjectController(ProjectRepository projectRepository, AssemblyTeamRepository assemblyTeamRepository) {
         this.projectRepository = projectRepository;
         this.assemblyTeamRepository = assemblyTeamRepository;
-        this.statusRepository = statusRepository;
     }
 
 
@@ -96,9 +94,11 @@ public class ProjectController {
         if (bindingResult.hasErrors()) {
             return "project/addProjectForm";
         }
-        if (statusRepository.findById(1L).isPresent()) {
-            project.setStatus(statusRepository.findById(1L).get());
-        }
+		
+		/*
+		 * if (statusRepository.findById(1L).isPresent()) {
+		 * project.setStatus(statusRepository.findById(1L).get()); }
+		 */
         projectRepository.save(project);
         return "redirect:/project/all";
     }
@@ -182,11 +182,10 @@ public class ProjectController {
         return assemblyTeamRepository.findAll();
     }
 
-    @ModelAttribute ("statusesList")
-    public List<Status> fetchStatuses() {
-        return statusRepository.findAll();
-    }
-
+	/*
+	 * @ModelAttribute ("statusesList") public List<Status> fetchStatuses() { return
+	 * statusRepository.findAll(); }
+	 */
 
     @ModelAttribute ("curentUser")
     User entityUser(@AuthenticationPrincipal CurrentUser customUser) {

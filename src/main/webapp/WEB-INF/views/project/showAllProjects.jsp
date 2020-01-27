@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+
+<html>
 <head>
     <title>Wszystkie projekty</title>
     <meta charset="utf-8">
@@ -12,7 +13,6 @@
 </head>
 
 <body>
-
 <jsp:include page="/WEB-INF/views/navigation/header.jsp"/>
 
 <div class="container top-margin">
@@ -122,6 +122,10 @@
     </table>
 </div>
 
+
+</body>
+
+</html>
 <script>
     $(document).ready(function(){
         $('[data-toggle="popover"]').popover();
@@ -129,8 +133,5 @@
 </script>
 
 
-<script> src="js/app.js" </script>
-</body>
-</body>
-</html>
-
+<script> src="js/app.js" 
+</script>

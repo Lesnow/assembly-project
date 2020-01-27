@@ -12,7 +12,7 @@
 </head>
 <jsp:include page="/WEB-INF/views/navigation/header.jsp"/>
 
-
+<body>
 <div class="container top-margin">
     <div class="form-group">
         <h2>Dane dotyczące projektu</h2>
@@ -46,12 +46,13 @@
                     <form:errors path="description" />
                 </div>
             </div>
-            <div class="form-group">
+   <%--         <div class="form-group">
                 <label class="control-label col-sm-2" for="statusId">Status</label>
                 <div class="col-sm-10">
                     <form:select path="status.id" id="statusId" items="${statusesList}" itemValue="id" itemLabel="statusName" class="form-control"/>
                     <form:errors path="status" />
                 </div>
+                --%> 
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2" for="priorityId">Priorytet</label>

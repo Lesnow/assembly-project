@@ -43,8 +43,6 @@ public class Project {
     @ManyToOne
     private AssemblyTeam assemblyTeam;
 
-    @ManyToOne
-    private Status status;
 
     @Size (max = 600)
     private String description;
