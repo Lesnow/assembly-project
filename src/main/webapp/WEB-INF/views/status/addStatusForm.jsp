@@ -16,12 +16,12 @@
     <div class="form-group">
         <h2>Status</h2>
 
-        <form:form method="post" modelAttribute="team" class="form-horizontal">
+        <form:form method="post" modelAttribute="status" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="assemblyTeamNameId">Nazwa firmy</label>
                 <div class="col-sm-6">
                     <form:input path="statusName" id="statusNameId" type="text" class="form-control" placeholder="wpisz nazwę nowego statusu"/>
-                    <form:errors path="statusName" />
+                    <form:errors path="statusName"/>
                 </div>
             </div>
           

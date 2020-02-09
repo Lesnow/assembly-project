@@ -25,8 +25,8 @@
         <tr>
             <th>#</th>
             <th><a href="/project/all">Projekt</a></th>
+            <th></th>
             <th>Numer fabryczny</th>
-            <th>Priorytet</th>
             <th>Status</th>
             <th>Adres projektu</th>
             <th><a href="/project/allByUser">Prowadzący</a></th>
@@ -61,9 +61,6 @@
                                 </c:choose>
                             </td>
                             <td>
-                                ${project.factoryNumber}
-                            </td>
-                            <td>
                                 <a href="/project/togglePriority/${project.id}">
                                     <c:choose>
                                         <c:when test="${project.priority == 2}">
@@ -79,7 +76,11 @@
                                 </a>
                             </td>
                             <td>
-                                ${project.status.statusName}
+                                ${project.factoryNumber}
+                            </td>
+                            
+                            <td>
+                                ${status.statusName}
                             </td>
                             <td>
                                 ${project.adress}
